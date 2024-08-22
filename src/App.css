@@ -10,3 +10,15 @@ form {
   flex-direction: column;
   gap:3px;
 }
+
+.delete {
+  background-color: red;
+  color: white;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+}

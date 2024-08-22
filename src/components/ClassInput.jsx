@@ -5,12 +5,13 @@ class ClassInput extends Component {
     super(props)
 
     this.state = {
-        todos:[],
+        todos:["one task","is all it takes","to fall in love with me"],
         inputVal:""
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleInputChange(e) {
@@ -26,6 +27,14 @@ class ClassInput extends Component {
         todos:state.todos.concat(state.inputVal),
         inputVal:""
     }))
+  }
+
+  handleDelete(index){
+    this.setState((prevState) => {
+      const updatedTodos = prevState.todos.filter((todo,i) => i!== index);
+      return {todos:updatedTodos}
+    })
+
   }
 
   render(){
@@ -46,8 +55,13 @@ class ClassInput extends Component {
         {/* The list of all the To-Do's, displayed */}
         <ul>
             {
-                this.state.todos.map((todo) =>(
-                    <li key={todo}>{todo}</li>
+                this.state.todos.map((todo,index) =>(
+                    <li key={todo}>
+                    {todo}
+                    <button onClick={()=> this.handleDelete(index)} className="delete">
+                      Delete
+                    </button>
+                    </li>
                 ))
             }
             </ul>
