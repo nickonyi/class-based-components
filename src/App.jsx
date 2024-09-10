@@ -4,13 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import FuctionalInput from './components/FuctionalInput'
 import ClassInput from './components/ClassInput'
+import Greeting from './components/Greeting'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <ClassInput name="Delilah" />
+      <Greeting name ="Chloe" />
     </>
   )
 }
