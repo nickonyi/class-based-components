@@ -1,6 +1,6 @@
 import { Component, createContext } from "react"
+import { ThemeContext } from "./Panel";
 
-const ThemeContext = createContext(null);
 
 class Button extends Component{
   static contextType = ThemeContext;

@@ -1,8 +1,8 @@
 import React, { Component, createContext } from 'react'
 
-const ThemeContext = createContext(null);
+export  const ThemeContext = createContext(null);
 
-class Panel extends Component() {
+class Panel extends Component {
     static contextType = ThemeContext;
   render() {
     const theme = this.context;
