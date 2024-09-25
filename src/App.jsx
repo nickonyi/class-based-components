@@ -7,6 +7,7 @@ import ClassInput from './components/ClassInput'
 import Greeting from './components/Greeting'
 import { ThemeContext } from './components/Panel'
 import Form from './components/Form'
+import Counter from './components/Counter'
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value="dark">
-      <Form/>
+      <Counter />
     </ThemeContext.Provider>
   )
 }
