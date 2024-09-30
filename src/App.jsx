@@ -1,19 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import FuctionalInput from './components/FuctionalInput'
-import ClassInput from './components/ClassInput'
-import Greeting from './components/Greeting'
+import "./App.css"
+import ChatRoom from './comps/ChatRoom';
+
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [roomId,setRoomId] = useState('general');
+  const [show,setShow] = useState(false);
 
   return (
-    <>
-      <Greeting name ="Chloe" />
-    </>
+     <div className='main-room'>
+     <label>
+     Choose the chat room:{' '}
+     <select value={roomId} onChange={(e) => setRoomId(e.target.value)}>
+       <option value="general">general</option>
+       <option value="travel">travel</option>
+       <option value="music">music</option>
+        <option value="gaming">gaming</option>
+     </select>
+     </label>
+     <button className='app-btn' onClick={() => setShow(!show)}>
+      {show?'Close chat':'Open chat'}
+     </button>
+     {show && <hr /> }
+     { show && <ChatRoom roomId = {roomId} />}
+     </div>
   )
 }
 

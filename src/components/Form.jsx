@@ -1,11 +1,14 @@
-import { Component } from "react";
-import Panel from "./Panel";
+import React from 'react'
+import Panel from './Panel'
+import Button from './Button'
 
-
-class Form extends Component {
-  render (){
-    <Panel ti></Panel>
-  }
+function Form() {
+  return (
+    <Panel title="Welcome">
+        <Button>Sign Up</Button>
+        <Button>Log in</Button>
+    </Panel>
+  )
 }
 
 export default Form

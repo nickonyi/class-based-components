@@ -1,19 +1,20 @@
-import { Component, createContext } from "react";
+import React, { Component, createContext } from 'react'
 
-const ThemeContext = createContext(null);
+export  const ThemeContext = createContext(null);
 
 class Panel extends Component {
     static contextType = ThemeContext;
-  render(){
+  render() {
     const theme = this.context;
     const className = 'panel-' + theme;
 
     return (
-        <section className={className}> 
-           <h1>{this.props.title}</h1>
-           {this.props.children}
+        <section className={className}>
+          <h1>{this.props.title}</h1>
+          {this.props.children}
         </section>
     )
+
   }
 }
 

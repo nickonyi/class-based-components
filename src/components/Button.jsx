@@ -1,18 +1,16 @@
 import { Component, createContext } from "react"
+import { ThemeContext } from "./Panel";
 
-const themeContext = createContext(null);
 
 class Button extends Component{
-
-static contentType = themeContext;
-
+  static contextType = ThemeContext;
   render() {
     const theme = this.context;
-    const className = 'button-' + theme; 
+    const className = 'button-' + theme;
    return (
-    <button className={className}>
-       {this.props.children}
-    </button>
+      <button className={className}>
+        {this.props.children}
+      </button>
    )
   }
 }
